@@ -1,6 +1,7 @@
 @extends('site.layouts.default')
 
 @section('content')
+
     <header class="relative  " style="min-height: 70vh">
         <div class="hero-bg absolute w-full h-full top-0 z-0 bg-purple-500">
         </div>
@@ -24,7 +25,9 @@
                 <ul class="image-lists px-2 pt-12 w-1/3">
                     @foreach($photos as $photo)
                     <li class="long p-2">
+                        <a href="/photo/{{ $photo->idx }}">
                         <img class="w-full object-cover" src="{{ asset('storage/' . $photo->file_path) }}" alt="" /> 
+                        </a>
                     </li>
                     @endforeach
                 </ul>
@@ -34,4 +37,5 @@
         </div>
 
     </section>
+   
 @endsection

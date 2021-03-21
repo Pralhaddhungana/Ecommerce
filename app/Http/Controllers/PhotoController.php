@@ -36,6 +36,6 @@ class PhotoController extends Controller
             return abort(404);
         }
 
-        return view('site.pages.show-photo');
+        return view('site.pages.show-photo')->with(['photo'=> $photo]);
     }
 }
